@@ -4,23 +4,27 @@ Installing Jupyter Lab:
 https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html
 
 tldr:
+
 If you have conda installed:
 `conda install -c conda-forge jupyterlab`
 or
 `pip install jupyterlab
 If you are using a macOS version that comes with Python 2, run pip3 instead of pip.`
 
-The @jupyterlab/ui-components dependencies requires an svg which shadow-cljs doesn't like, I've run webpack on it with svg-inline-loader and output the file to node_modules/@jupyterlab/ui-components/dist/index.js and included it in this git repo.
+The `@jupyterlab/ui-components` dependency requires an svg which shadow-cljs doesn't like, I've run webpack on it with svg-inline-loader and output the file to `node_modules/@jupyterlab/ui-components/dist/index.js` and included it in this git repo.
 
-After running the shadow-cljs build :notebook-npm-module or :notebook-esm files are written to lib/
+
+After running the `npm install` && shadow-cljs build `:notebook-npm-module` or `:notebook-esm` files are written to `lib/`
 
 `index.js` refers to the built `lib/notebook.js`, uncomment the first line to test the `lib/notebookesm.js` file.
 
-to build and link the lab extension:
-
+to let jupyter build and link the lab extension:
 `jupyter labextension link . --debug && say "done." && jupyter lab --watch`
 
-This will launch the jupyter lab notebook and the extension, this leads to errors for these builds:
+This will launch the jupyter lab notebook and the extension
+
+
+Current errors for these builds:
 
 `:esm` watch build hits:
 
