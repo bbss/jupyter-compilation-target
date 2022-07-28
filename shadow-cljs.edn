@@ -1,0 +1,31 @@
+{:deps   {:aliases [:dev]}
+ :nrepl  {:port 12000}
+ :builds {:notebook-npm-module
+          {:target           :npm-module
+           :compiler-options {:infer-externs :auto
+                              :output-feature-set :es-next}
+           :output-dir       "lib"
+           :output-to        "lib/notebook.js"
+           :runtime          :browser
+           :exports-var      notebook/extension
+           :js-options
+           {:resolve
+            {"@jupyterlab/ui-components"
+             {:target :file
+              :file "node_modules/@jupyterlab/ui-components/dist/index.js"}
+             "txml/txml"     {:target :file :file "node_modules/txml/dist/txml.js"}}}}
+          :notebook-esm
+          {:target           :esm
+           :compiler-options {:infer-externs :auto
+                              :output-feature-set :es-next}
+           :output-dir       "lib"
+           :output-to        "lib/notebookesm.js"
+           :modules          {:notebookesm {:entries [notebook]}}
+           :runtime          :browser
+           :exports-var      notebook/extension
+           :js-options
+           {:resolve
+            {"@jupyterlab/ui-components"
+             {:target :file
+              :file "node_modules/@jupyterlab/ui-components/dist/index.js"}
+             "txml/txml"     {:target :file :file "node_modules/txml/dist/txml.js"}}}}}}
