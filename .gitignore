@@ -12,3 +12,10 @@ pom.xml.asc
 .lein-failures
 .nrepl-port
 .cpcache/
+
+node_modules/
+*.iml
+.shadow-cljs/
+.idea/
+.ipynb_checkpoints/
+*.ipynb

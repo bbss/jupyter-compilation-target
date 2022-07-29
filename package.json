@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "@jupyterlab/application": "3.3.2",
-    "@jupyterlab/apputils": "3.3.2",
-    "@jupyterlab/launcher": "3.3.2",
-    "@jupyterlab/notebook": "3.3.2",
+    "@jupyterlab/application": "3.4.4",
+    "@jupyterlab/apputils": "3.4.4",
+    "@jupyterlab/launcher": "3.4.4",
+    "@jupyterlab/notebook": "3.4.4",
     "@lumino/messaging": "^1.10.1",
     "@lumino/widgets": "^1.33.0",
     "deck.gl": "^8.8.5",
@@ -20,15 +20,16 @@
   },
   "scripts": {},
   "devDependencies": {
-    "@jupyterlab/builder": "^3.3.2",
+    "@jupyterlab/builder": "^3.4.4",
     "shadow-cljs": "2.19.8"
   },
   "files": [
     "index.js",
-    "lib/*.{js,js.map}"
+    "lib/*.{js,js.map}",
+    "lib/cljs-runtime/*.{js,js.map}"
   ],
   "jupyterlab": {
-    "extension": "index.js"
+    "extension": "lib/notebook.js"
   },
   "keywords": [
     "jupyterlab-extension"
